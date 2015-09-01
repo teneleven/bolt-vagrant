@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /var/www
+cp app/config/config.yml.dist app/config/config.yml
 
 composer install --prefer-dist
 
