@@ -299,8 +299,8 @@ python:
     packages: {  }
     versions: {  }
 nodejs:
-    install: '0'
-    npm_packages: {  }
+    install: '1'
+    npm_packages: { grunt-cli }
 hhvm:
     install: '0'
     nightly: 0
