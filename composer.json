@@ -17,14 +17,23 @@
     "prefer-stable": true,
     "scripts": {
         "post-create-project-cmd": [
-            "Bolt\\Composer\\ScriptHandler::bootstrap"
+            "Bolt\\Composer\\ScriptHandler::bootstrap",
+            "yes 2>/dev/null | \\cp app/view/. web/bolt-public/view/ -R"
+        ],
+        "post-install-cmd": [
+            "Bolt\\Composer\\ScriptHandler::installAssets",
+            "yes 2>/dev/null | \\cp app/view/. web/bolt-public/view/ -R"
+        ],
+        "post-update-cmd": [
+            "Bolt\\Composer\\ScriptHandler::bootstrap",
+            "yes 2>/dev/null | \\cp app/view/. web/bolt-public/view/ -R"
         ]
     },
     "extra": {
         "branch-alias": {
             "dev-master": "2.3-dev"
         },
-        "bolt-web-dir": "./",
+        "bolt-web-dir": "./web",
         "bolt-app-dir": "./app"
     }
 }

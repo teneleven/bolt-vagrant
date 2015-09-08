@@ -5,5 +5,6 @@ composer.lock
 app/cache/*
 extensions/vendor
 app/database/*
+web/bolt-public
 thumbs/
 vendor/

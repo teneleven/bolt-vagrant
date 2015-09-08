@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+
+    var path = require('path'),
+        boltPath = path.join(process.cwd(), '../../vendor/bolt/bolt/app/src');
+
     grunt.util.linefeed = '\n';
 
     var options = {
@@ -30,39 +34,9 @@ module.exports = function(grunt) {
 
         files: {
             boltJs: [
-                // Prerequisites
-                '<%= path.src.js %>/console.js',
-                '<%= path.src.js %>/class-extends.js',
-                // Bolt module
-                '<%= path.src.js %>/bolt.js',
-                '<%= path.src.js %>/modules/actions.js',
-                '<%= path.src.js %>/modules/activity.js',
-                '<%= path.src.js %>/modules/app.js',
-                '<%= path.src.js %>/modules/ckeditor.js',
-                '<%= path.src.js %>/modules/conf.js',
-                '<%= path.src.js %>/modules/data.js',
-                '<%= path.src.js %>/modules/datetime.js',
-                '<%= path.src.js %>/modules/editcontent.js',
-                '<%= path.src.js %>/modules/files.js',
-                '<%= path.src.js %>/modules/liveeditor.js',
-                '<%= path.src.js %>/modules/stack.js',
-                '<%= path.src.js %>/modules/secmenu.js',
-                '<%= path.src.js %>/modules/video.js',
-                '<%= path.src.js %>/modules/fields.js',
-                '<%= path.src.js %>/modules/fields/geolocation.js',
-                '<%= path.src.js %>/modules/fields/slug.js',
-                // Old stuff
-                '<%= path.src.js %>/fnc-helpers.js',
-                '<%= path.src.js %>/activity.js',
-                '<%= path.src.js %>/bind-fileupload.js',
-                '<%= path.src.js %>/make-uri-slug.js',
-                '<%= path.src.js %>/video-embed.js',
-                '<%= path.src.js %>/upload-files.js',
-                '<%= path.src.js %>/obj-moments.js',
-                '<%= path.src.js %>/obj-datetime.js',
-                '<%= path.src.js %>/obj-validation.js',
-                '<%= path.src.js %>/extend.js',
-                '<%= path.src.js %>/init.js'
+                path.join(boltPath, '<%= path.src.js %>/*.js'),
+                path.join(boltPath, '<%= path.src.js %>/**/*.js'),
+                '<%= path.src.js %>/*.js'
             ]
         },
 
@@ -84,8 +58,7 @@ module.exports = function(grunt) {
     };
 
     // Optionally overwrite options with grunt-local/*.js
-    var path = require('path'),
-        localOptions = {};
+    var localOptions = {};
 
     grunt.file.expand('./grunt-local/*.js').map(function (confPath) {
         grunt.verbose.writeln('Load local options "' + confPath + '"');
@@ -95,13 +68,15 @@ module.exports = function(grunt) {
 
     // Start
     require('load-grunt-config')(grunt, {
+        configPath: path.join(boltPath, 'grunt'),
         data: options,
         jitGrunt: {
             staticMappings: {
-                pages: 'grunt-tasks/pages.js',
+                pages: path.join(boltPath, 'grunt-tasks/pages.js'),
                 htmllint: 'grunt-html',
                 bom: 'grunt-bom-removal'
             }
         }
     });
+
 };
