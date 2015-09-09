@@ -6,11 +6,8 @@
 - [Virtualbox](https://www.virtualbox.org)
 - [RubyGems](https://rubygems.org/)
 
-**One-time Setup**: (replace `PROJECTDIR` with the bolt-vagrant directory)
+**Two-Step Setup**: (replace `PROJECTDIR` with the bolt-vagrant directory)
 
-- `gem install librarian-puppet` (this might need `sudo` in front if on UNIX-based system)
-- `cd PROJECTDIR/vagrant/puphpet/puppet`
-- `librarian-puppet install`
 - `cd PROJECTDIR/vagrant`
 - `vagrant up --provision`
 

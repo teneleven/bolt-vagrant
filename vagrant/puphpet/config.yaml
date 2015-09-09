@@ -72,7 +72,6 @@ server:
     packages:
         - vim
         - htop
-        - nodejs-legacy
 users_groups:
     install: '1'
     groups: {  }
@@ -301,7 +300,7 @@ python:
     versions: {  }
 nodejs:
     install: '1'
-    npm_packages: { grunt-cli }
+    npm_packages: [ 'grunt-cli' ]
 hhvm:
     install: '0'
     nightly: 0
