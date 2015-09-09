@@ -1,6 +1,6 @@
 {
-    "name": "Bolt-2-backend",
-    "version": "2.0.2",
+    "name": "bolt-sandbox",
+    "version": "0.0.1",
     "description": "Required Node/Grunt modules for backend's frontend workflow.",
     "license": "MIT",
     "repository": {
@@ -8,7 +8,6 @@
         "url": "https://github.com/bolt/bolt.git"
     },
     "devDependencies": {
-        "Bolt-2-backend": "*",
         "bootstrap-sass": "3.2.0",
         "deep-extend": "^0.4.0",
         "font-awesome": "~4.4.0",
@@ -32,7 +31,7 @@
         "jsdoc": "^3.3.0-beta2",
         "load-grunt-config": "~0.17.2",
         "load-grunt-tasks": "~3.2.0",
-        "node-sass": "~3.2.0",
+        "node-sass": "~3.3.0",
         "request": "^2.55.0"
     }
 }

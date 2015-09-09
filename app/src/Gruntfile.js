@@ -37,6 +37,9 @@ module.exports = function(grunt) {
                 path.join(boltPath, '<%= path.src.js %>/*.js'),
                 path.join(boltPath, '<%= path.src.js %>/**/*.js'),
                 '<%= path.src.js %>/*.js'
+            ],
+            boltCss: [
+                //'<%= path.src.sass/*.scss'
             ]
         },
 
