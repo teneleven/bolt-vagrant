@@ -1,6 +1,10 @@
 composer.lock
 .idea
 
+# vagrant stuff
+vagrant/.vagrant
+vagrant/.librarian
+
 # Bolt specific stuff. Don't put config files, databases or 'vendor' in Git.
 app/cache/*
 extensions/vendor
