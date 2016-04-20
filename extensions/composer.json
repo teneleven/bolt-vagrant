@@ -4,6 +4,18 @@
         "bolt": {
             "type": "composer",
             "url": "https://extensions.bolt.cm/satis/"
+        },
+        "teneleven-less": {
+            "type": "package",
+            "package": {
+                "name": "teneleven/bolt-extension-less",
+                "version": "1.0.0",
+                "source": {
+                    "url": "git@github.com:teneleven/bolt-extension-less.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     },
     "minimum-stability": "stable",
@@ -28,5 +40,9 @@
         "post-package-update": "Bolt\\Composer\\ExtensionInstaller::handle"
     },
     "require": {
+        "bobdenotter/seo": "^0.9.10",
+        "maiorano84/bolt-shortcodes": "dev-master",
+        "mikescops/bootstrapbolttheme": "^1.0",
+        "teneleven/bolt-extension-less": "^1.0"
     }
 }
