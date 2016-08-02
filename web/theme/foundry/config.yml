@@ -1,0 +1,18 @@
+# Optional config file for the theme.
+
+# Variables that are in this file, can be used in your twig template like {{ theme.foo }}
+# Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
+
+            
+templateselect:
+    templates:
+        - name: 'Basic Page'
+          filename: 'index.twig'     
+        - name: 'Listing'
+          filename: 'listing.twig'    
+        - name: 'Entry'
+          filename: 'entry.twig'   
+        - name: 'Record'
+          filename: 'record.twig'   
+        - name: 'Search Results'
+          filename: 'searchresults.twig'          

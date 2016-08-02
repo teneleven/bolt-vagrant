@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {# Bolt SEO extension  #}
+        <title>{{ seo.title() }}</title>
+        {{ seo.metatags() }}    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
+        <link href="{{ paths.theme }}css/main.css" rel="stylesheet" type="text/css" media="all"  />
+    </head>
+    <body>
+
+        <div class="nav-container">
+            <a id="top"></a>
+            <nav class="absolute">
+                <div class="nav-utility">
+                    <div class="module left">
+                        <a href="#"><i class="ti-location-arrow">&nbsp;</i>
+                        <span class="sub">5055 N Harbor Drive</span></a>
+                    </div>
+                    <div class="module left">
+                        <a href="mailto:hello@foundry.net"><i class="ti-email">&nbsp;</i>
+                        <span class="sub">hello@foundry.net</span></a>
+                    </div>
+                    <div class="module right">
+                        <ul class="list-unstyled list-inline">
+                            {{ menu('utility', '_sub_menu.twig') }}
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bar">
+                    <div class="module left">
+                        <a href="{{ paths.root }}">
+                            <img class="logo logo-light" alt="{{ app.config.get('general/sitename') }}" src="{{ paths.theme }}images/logo-light.png" />
+                            <img class="logo logo-dark" alt="{{ app.config.get('general/sitename') }}" src="{{ paths.theme }}images/logo-dark.png" />
+                        </a>
+                    </div>
+                    <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                        <i class="ti-menu"></i>
+                    </div>
+                    <div class="module-group right">
+                        <div class="module left">
+                            <ul class="menu">
+                                {{ menu('main', '_sub_menu.twig') }}
+                            </ul>
+                        </div>
+                        <!--end of menu module-->
+                        <div class="module widget-handle search-widget-handle left">
+                            <div class="search">
+                                <i class="ti-search"></i>
+                                <span class="title">Search Site</span>
+                            </div>
+                            <div class="function">
+                                <form method="get" class="search-form" action="{{ paths.root }}search" id="searchform" enctype="text/plain">
+                                    <input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __("Search the site") }}" name="search">
+                                </form>
+                            </div>
+                        </div>                        
+                    </div>
+                    <!--end of module group-->
+                </div>
+            </nav>
+        </div>
+        <div class="main-container">
+        
