@@ -5,7 +5,8 @@
     "require": {
         "bolt/bolt": "~2.2",
         "composer/composer": "1.0.*@dev",
-        "ircmaxell/random-lib": "dev-master"
+        "ircmaxell/random-lib": "dev-master",
+        "oyejorge/less.php": "~1.7.0.9"
     },
     "authors": [
         {
