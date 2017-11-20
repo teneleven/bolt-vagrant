@@ -11,7 +11,7 @@
                 "name": "teneleven/bolt-extension-less",
                 "version": "1.0.0",
                 "source": {
-                    "url": "git@github.com:teneleven/bolt-extension-less.git",
+                    "url": "https://github.com/teneleven/bolt-extension-less.git",
                     "type": "git",
                     "reference": "master"
                 }
